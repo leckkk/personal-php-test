@@ -45,7 +45,7 @@ class CanalTest extends Command
             # $client = CanalConnectorFactory::createClient(CanalClient::TYPE_SWOOLE);
 
             //canal-server 监听地址端口
-            $client->connect("192.168.0.152", 11111);
+            $client->connect("127.0.0.1", 11111);
             $client->checkValid();
             //订阅binlog信息 与canal-server配置一致
             $client->subscribe("1001", "example", "canal_test\\.users");
