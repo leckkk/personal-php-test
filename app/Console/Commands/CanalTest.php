@@ -48,7 +48,7 @@ class CanalTest extends Command
             $client->connect("192.168.0.152", 11111);
             $client->checkValid();
             //订阅binlog信息 与canal-server配置一致
-            $client->subscribe("1001", "example", "linhuiba\\.users");
+            $client->subscribe("1001", "example", "canal_test\\.users");
             # $client->subscribe("1001", "example", "db_name.tb_name"); # 设置过滤
 
             while (true) {
