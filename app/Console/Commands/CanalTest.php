@@ -56,6 +56,8 @@ class CanalTest extends Command
             $client->connect("104.168.43.142", 11111);
             $client->checkValid();
             //订阅binlog信息 与canal-server配置一致
+            //filter例子：canal_test\\.users | .*\\..* | canal_test\\..*
+            //          canal_test库 users表  所有库所有表  canal_test库
             $client->subscribe("1001", "example", "canal_test\\..*");
             # $client->subscribe("1001", "example", "db_name.tb_name"); # 设置过滤
 
@@ -65,6 +67,7 @@ class CanalTest extends Command
                     foreach ($entries as $entry) {
                         Fmt::println($entry);
                         $res = $this->entryParser($entry);
+                        //记录日志，并同步到另一个表
                         if ($res != []) {
                             Log::info('res:', $res);
                             app(StoreController::class)->store($res);
@@ -81,6 +84,7 @@ class CanalTest extends Command
         }
     }
 
+    //entry解析
     public function entryParser(Entry $entry)
     {
         $entryType = $entry->getEntryType();
@@ -110,6 +114,7 @@ class CanalTest extends Command
         return $response;
     }
 
+    //column数据解析
     public function rowDataParse(RepeatedField $columns)
     {
         $response = [];

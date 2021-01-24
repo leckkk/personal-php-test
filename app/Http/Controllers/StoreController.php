@@ -43,8 +43,8 @@ class StoreController extends Controller
                     }
                 }
                 break;
-            case EventType::CREATE:
-            case EventType::ALTER:
+            case EventType::CREATE: //create table
+            case EventType::ALTER: //alter table
             case EventType::ERASE: //drop table
                 $query->statement($data['sql']);
                 break;
