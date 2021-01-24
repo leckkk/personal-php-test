@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\StoreController;
 use Com\Alibaba\Otter\Canal\Protocol\Entry;
 use Com\Alibaba\Otter\Canal\Protocol\EntryType;
 use Com\Alibaba\Otter\Canal\Protocol\EventType;
@@ -64,7 +65,10 @@ class CanalTest extends Command
                     foreach ($entries as $entry) {
                         Fmt::println($entry);
                         $res = $this->entryParser($entry);
-                        Log::info('res:', $this->entryParser($entry));
+                        if ($res != []) {
+                            Log::info('res:', $res);
+                            app(StoreController::class)->store($res);
+                        }
                         dump($res);
                     }
                 }
@@ -91,16 +95,16 @@ class CanalTest extends Command
 
         $rowDatas = $rowChange->getRowDatas();
         $response = [];
+        $response['sql'] = $rowChange->getSql();
+        $response['database'] = $header->getSchemaName();
+        $response['table'] = $header->getTableName();
+        $response['eventType'] = $evenType;
 
         foreach ($rowDatas as $rowData) {
             $res = [];
-            $res['database'] = $header->getSchemaName();
-            $res['table'] = $header->getTableName();
-            $res['eventType'] = EventType::name($evenType);
-            $res['sql'] = $rowChange->getSql();
             $res['before'] = $this->rowDataParse($rowData->getBeforeColumns());
             $res['after'] = $this->rowDataParse($rowData->getAfterColumns());
-            $response[] = $res;
+            $response['datas'][] = $res;
         }
 
         return $response;
