@@ -14,6 +14,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
+        "php-ffmpeg/php-ffmpeg": "~0.5",
         "xingwenge/canal_php": "^1.0"
     },
     "require-dev": {
