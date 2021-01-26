@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  elasticseach_ik:
+    image: ar414/elasticsearch-7.9-ik-plugin
+    ports: 
+      - 9200:9200
+      - 9300:9300
+    volumes: 
+      - ./data:/var/lib/elasticsearch
+      - ./log:/var/log/elasticsearch
+    environment:
+      - discovery.type=single-node
