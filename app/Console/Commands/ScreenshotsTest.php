@@ -5,7 +5,9 @@ namespace App\Console\Commands;
 use FFMpeg\Coordinate\TimeCode;
 use FFMpeg\FFMpeg;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Mockery\Exception;
 
 class ScreenshotsTest extends Command
 {
@@ -40,7 +42,7 @@ class ScreenshotsTest extends Command
      */
     public function handle()
     {
-        $url = $this->option('url') ?? null;
+        $url = $this->option('url') ?? 'rtmp://relay021.yunding360.com:10102/live/798EE19C03029_1_0?sn=798EE19C03029&loginKey=hZpn0p4Ny0F5Wiec&chn=1';
         if (!$url) {
             $this->info('请输入视频流地址 {--url=} ');
         }
@@ -51,13 +53,19 @@ class ScreenshotsTest extends Command
             'ffmpeg.threads'   => 12,   // The number of threads that FFMpeg should use
         ]);
 
-        $video = $ffmpeg->open($url);
-        $frame = $video->frame(TimeCode::fromSeconds(0));
+        try {
+            $video = $ffmpeg->open($url);
+            $frame = $video->frame(TimeCode::fromSeconds(0));
 
-        $fileName = 'video/' . Str::random(4) . '_' . now()->format('YmdHis') . '.jpg';
-        if (!is_dir(storage_path("video"))) {
-            mkdir(storage_path("video"), 0755);
+            $fileName = 'video/' . Str::random(4) . '_' . now()->format('YmdHis') . '.jpg';
+            if (!is_dir(storage_path("video"))) {
+                mkdir(storage_path("video"), 0755);
+            }
+            $frame->save(storage_path($fileName));
+        } catch (Exception $e) {
+            Log::info('执行失败');
+            throw $e;
         }
-        $frame->save(storage_path($fileName));
+
     }
 }
