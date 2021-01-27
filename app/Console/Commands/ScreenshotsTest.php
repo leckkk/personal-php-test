@@ -46,6 +46,9 @@ class ScreenshotsTest extends Command
         if (!$url) {
             $this->info('请输入视频流地址 {--url=} ');
         }
+
+        $url = $url . ' live=1';
+
         $ffmpeg = FFMpeg::create([
             'ffmpeg.binaries'  => '/usr/bin/ffmpeg',
             'ffprobe.binaries' => '/usr/bin/ffprobe',
