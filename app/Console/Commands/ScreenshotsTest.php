@@ -138,7 +138,7 @@ class ScreenshotsTest extends Command
         ]);
 
         foreach ($urls as $shop => $channels) {
-            foreach ($shop as $channel => $url) {
+            foreach ($channels as $channel => $url) {
                 try {
                     $video = $ffmpeg->open($url);
                     $frame = $video->frame(TimeCode::fromSeconds(0));
