@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use FFMpeg\Coordinate\TimeCode;
+use FFMpeg\Exception\RuntimeException;
 use FFMpeg\FFMpeg;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
@@ -151,7 +152,7 @@ class ScreenshotsTest extends Command
                         mkdir(storage_path("video/" . $shop), 0755);
                     }
                     $frame->save(storage_path($fileName));
-                } catch (Exception $e) {
+                } catch (RuntimeException $e) {
                     Log::info('执行失败:' . $e->getMessage());
                 }
             }
