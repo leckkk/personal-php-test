@@ -60,7 +60,7 @@ class ScreenshotsTest extends Command
             $video = $ffmpeg->open($url);
             $frame = $video->frame(TimeCode::fromSeconds(0));
 
-            $fileName = 'video/' . Str::random(4) . '_' . now()->format('YmdHis') . '.jpg';
+            $fileName = 'video/' . now()->format('YmdHis') . '_' . Str::random(4) . '.jpg';
             if (!is_dir(storage_path("video"))) {
                 mkdir(storage_path("video"), 0755);
             }
