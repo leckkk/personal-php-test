@@ -54,7 +54,6 @@ class ScreenshotsTest extends Command
             $urls = [
                 'shop1_chn2' => 'rtmp://relay021.yunding360.com:10102/live/B04B620407072_2_0?sn=B04B620407072&loginKey=PEFWnehHratKEyiq&chn=2 live=1',
                 'shop1_chn0' => 'rtmp://relay021.yunding360.com:10102/live/B04B620407072_0_0?sn=B04B620407072&loginKey=VzFskSnJ9Sw4QECU&chn=0 live=1',
-                'shop1_chn1' => 'rtmp://relay021.yunding360.com:10102/live/B04B620407072_1_0?sn=B04B620407072&loginKey=VzFskSnJ9Sw4QECU&chn=1 live=1',
                 'shop2_chn0' => 'rtmp://relay021.yunding360.com:10102/live/99C1A19C03344_0_0?sn=99C1A19C03344&loginKey=tbe3dzV66WUvsnfv&chn=0 live=1',
                 'shop3_chn1' => 'rtmp://relay021.yunding360.com:10102/live/0407219805330_1_0?sn=0407219805330&loginKey=JWUcJRBujEW5duyW&chn=1 live=1',
                 'shop3_chn0' => 'rtmp://relay021.yunding360.com:10102/live/0407219805330_0_0?sn=0407219805330&loginKey=uRfmRYdMVaKYIMKg&chn=0 live=1',
@@ -88,10 +87,7 @@ class ScreenshotsTest extends Command
                 'shop11_chn3' => 'rtmp://relay021.yunding360.com:10102/live/4327019C03822_3_0?sn=4327019C03822&loginKey=vwlzbwoawBPbL0Pg&chn=3 live=1',
                 'shop11_chn1' => 'rtmp://relay021.yunding360.com:10102/live/4327019C03822_1_0?sn=4327019C03822&loginKey=vwlzbwoawBPbL0Pg&chn=1 live=1',
                 'shop12_chn0' => 'rtmp://relay021.yunding360.com:10102/live/D216219805324_0_0?sn=D216219805324&loginKey=D0bRbDjFNnCddCzZ&chn=0 live=1',
-                'shop12_chn3' => 'rtmp://relay021.yunding360.com:10102/live/D216219805324_3_0?sn=D216219805324&loginKey=VlE89kP7Amo4uWz8&chn=3 live=1',
-                'shop12_chn2' => 'rtmp://relay021.yunding360.com:10102/live/D216219805324_2_0?sn=D216219805324&loginKey=VlE89kP7Amo4uWz8&chn=2 live=1',
                 'shop12_chn1' => 'rtmp://relay021.yunding360.com:10102/live/D216219805324_1_0?sn=D216219805324&loginKey=VlE89kP7Amo4uWz8&chn=1 live=1',
-                'shop12_chn4' => 'rtmp://relay021.yunding360.com:10102/live/D216219805324_4_0?sn=D216219805324&loginKey=VlE89kP7Amo4uWz8&chn=4 live=1',
                 'shop13_chn0' => 'rtmp://relay021.yunding360.com:10102/live/2C75F19C03044_0_0?sn=2C75F19C03044&loginKey=cVedoVdMQxIpsnED&chn=0 live=1',
                 'shop13_chn1' => 'rtmp://relay021.yunding360.com:10102/live/2C75F19C03044_1_0?sn=2C75F19C03044&loginKey=cVedoVdMQxIpsnED&chn=1 live=1',
                 'shop13_chn2' => 'rtmp://relay021.yunding360.com:10102/live/2C75F19C03044_2_0?sn=2C75F19C03044&loginKey=cVedoVdMQxIpsnED&chn=2 live=1',

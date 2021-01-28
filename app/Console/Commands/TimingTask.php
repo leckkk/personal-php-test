@@ -42,7 +42,9 @@ class TimingTask extends Command
         $failitem = Redis::hgetall('screenshots');
         if ($failitem) {
             Log::channel('single')->error('执行失败记录：', $failitem);
+            Redis::hdel('screenshots', ...$failitem);
         }
+
 
         $urls = [
             'shop1_chn2' => 'rtmp://relay021.yunding360.com:10102/live/B04B620407072_2_0?sn=B04B620407072&loginKey=PEFWnehHratKEyiq&chn=2 live=1',
