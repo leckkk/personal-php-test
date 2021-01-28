@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\ScreenshotsTest;
+use App\Console\Commands\TimingTask;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,6 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         ScreenshotsTest::class,
+        TimingTask::class
     ];
 
     /**
@@ -27,7 +29,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
 
-        $schedule->command('test:screenshots')->hourly();
+        $schedule->command('test:screenshots')->everyTenMinutes();
+
+        $schedule->command('timing_task:screenshots')->hourly();
     }
 
     /**
