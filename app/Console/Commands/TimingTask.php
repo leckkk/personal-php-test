@@ -42,7 +42,7 @@ class TimingTask extends Command
         $failitem = Redis::hgetall('screenshots');
         if ($failitem) {
             Log::channel('single')->error('执行失败记录：', $failitem);
-            Redis::hdel('screenshots', ...$failitem);
+            Redis::hdel('screenshots', ...array_keys($failitem));
         }
 
 
