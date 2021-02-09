@@ -50,7 +50,6 @@ class TimingTask extends Command
             'shop1_chn2' => 'rtmp://relay021.yunding360.com:10102/live/B04B620407072_2_0?sn=B04B620407072&loginKey=PEFWnehHratKEyiq&chn=2 live=1',
             'shop1_chn0' => 'rtmp://relay021.yunding360.com:10102/live/B04B620407072_0_0?sn=B04B620407072&loginKey=VzFskSnJ9Sw4QECU&chn=0 live=1',
             'shop2_chn0' => 'rtmp://relay021.yunding360.com:10102/live/99C1A19C03344_0_0?sn=99C1A19C03344&loginKey=tbe3dzV66WUvsnfv&chn=0 live=1',
-            'shop3_chn1' => 'rtmp://relay021.yunding360.com:10102/live/0407219805330_1_0?sn=0407219805330&loginKey=JWUcJRBujEW5duyW&chn=1 live=1',
             'shop3_chn0' => 'rtmp://relay021.yunding360.com:10102/live/0407219805330_0_0?sn=0407219805330&loginKey=uRfmRYdMVaKYIMKg&chn=0 live=1',
             'shop3_chn2' => 'rtmp://relay021.yunding360.com:10102/live/0407219805330_2_0?sn=0407219805330&loginKey=mQTDkZgnx2Z5XnlU&chn=2 live=1',
             'shop4_chn0' => 'rtmp://relay021.yunding360.com:10102/live/C8D6119805315_0_0?sn=C8D6119805315&loginKey=pLy52Z5mHd02UjjE&chn=0 live=1',
