@@ -11,13 +11,16 @@
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
+        "google/protobuf": "^3.15",
+        "grpc/grpc": "^1.36",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/scout": "^8.6",
         "laravel/tinker": "^2.5",
         "php-ffmpeg/php-ffmpeg": "~0.5",
         "predis/predis": "^1.1",
-        "xingwenge/canal_php": "^1.0"
+        "xingwenge/canal_php": "^1.0",
+        "ext-grpc": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -38,6 +41,9 @@
         }
     },
     "autoload": {
+        "classmap": [
+            "app/Grpc"
+        ],
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",

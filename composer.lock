@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c2aa6987abdf23829b724a444c40b86",
+    "content-hash": "f82d7d1efcdbf45e11b6438007b827b8",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -944,16 +944,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.14.0",
+            "version": "v3.15.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "03f132a66f09f96064309e81c5fac8d35b7474e1"
+                "reference": "f22e60e5deb972ded0115c620a99b3f1ac2f4824"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/03f132a66f09f96064309e81c5fac8d35b7474e1",
-                "reference": "03f132a66f09f96064309e81c5fac8d35b7474e1",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/f22e60e5deb972ded0115c620a99b3f1ac2f4824",
+                "reference": "f22e60e5deb972ded0115c620a99b3f1ac2f4824",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -987,11 +987,7 @@
             "keywords": [
                 "proto"
             ],
-            "support": {
-                "issues": "https://github.com/protocolbuffers/protobuf-php/issues",
-                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v3.14.0"
-            },
-            "time": "2020-11-13T23:41:35+00:00"
+            "time": "2021-02-25T23:39:41+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -1064,6 +1060,53 @@
                 }
             ],
             "time": "2020-04-13T13:17:36+00:00"
+        },
+        {
+            "name": "grpc/grpc",
+            "version": "1.36.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/grpc/grpc-php.git",
+                "reference": "6145dd917d340b579f0b663940b17cc93172b79a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/grpc/grpc-php/zipball/6145dd917d340b579f0b663940b17cc93172b79a",
+                "reference": "6145dd917d340b579f0b663940b17cc93172b79a",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "google/auth": "^v1.3.0"
+            },
+            "suggest": {
+                "ext-protobuf": "For better performance, install the protobuf C extension.",
+                "google/protobuf": "To get started using grpc quickly, install the native protobuf library."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Grpc\\": "src/lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "gRPC library for PHP",
+            "homepage": "https://grpc.io",
+            "keywords": [
+                "rpc"
+            ],
+            "time": "2021-03-01T21:52:11+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
