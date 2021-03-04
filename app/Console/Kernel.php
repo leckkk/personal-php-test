@@ -29,9 +29,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
 
-        $schedule->command('timing_task:screenshots')->everyMinute();
+        $schedule->command('timing_task:screenshots')->everyTenMinutes();
 
-        $schedule->command('test:screenshots')->everyMinute();
+        $schedule->command('test:screenshots')->everyTenMinutes();
     }
 
     /**
