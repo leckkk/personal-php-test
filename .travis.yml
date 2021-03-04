@@ -1,0 +1,14 @@
+language: php
+php:
+  - 7.4
+service:
+  - mysql
+before_script:
+  - composer install --prefer-dist --no-scripts -o
+  - composer dump-autoload
+  - cp .env.travis .env
+  - php artisan key:generate
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS canal ;'
+  - php artisan migrate
+  - php artisan db:seed
+script: phpunit

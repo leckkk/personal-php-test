@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace ;
+namespace Api\Helloworld\V1;
 
 /**
  */
@@ -17,72 +17,72 @@ class UserServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \CreateUserRequest $argument input argument
+     * @param \Api\Helloworld\V1\CreateUserRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function CreateUser(\CreateUserRequest $argument,
+    public function CreateUser(\Api\Helloworld\V1\CreateUserRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/UserService/CreateUser',
+        return $this->_simpleRequest('/api.helloworld.v1.UserService/CreateUser',
         $argument,
-        ['\CreateUserReply', 'decode'],
+        ['\Api\Helloworld\V1\CreateUserReply', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \UpdateUserRequest $argument input argument
+     * @param \Api\Helloworld\V1\UpdateUserRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function UpdateUser(\UpdateUserRequest $argument,
+    public function UpdateUser(\Api\Helloworld\V1\UpdateUserRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/UserService/UpdateUser',
+        return $this->_simpleRequest('/api.helloworld.v1.UserService/UpdateUser',
         $argument,
-        ['\UpdateUserReply', 'decode'],
+        ['\Api\Helloworld\V1\UpdateUserReply', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \DeleteUserRequest $argument input argument
+     * @param \Api\Helloworld\V1\DeleteUserRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function DeleteUser(\DeleteUserRequest $argument,
+    public function DeleteUser(\Api\Helloworld\V1\DeleteUserRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/UserService/DeleteUser',
+        return $this->_simpleRequest('/api.helloworld.v1.UserService/DeleteUser',
         $argument,
-        ['\DeleteUserReply', 'decode'],
+        ['\Api\Helloworld\V1\DeleteUserReply', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \GetUserRequest $argument input argument
+     * @param \Api\Helloworld\V1\GetUserRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function GetUser(\GetUserRequest $argument,
+    public function GetUser(\Api\Helloworld\V1\GetUserRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/UserService/GetUser',
+        return $this->_simpleRequest('/api.helloworld.v1.UserService/GetUser',
         $argument,
-        ['\GetUserReply', 'decode'],
+        ['\Api\Helloworld\V1\GetUserReply', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * @param \ListUserRequest $argument input argument
+     * @param \Api\Helloworld\V1\ListUserRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function ListUser(\ListUserRequest $argument,
+    public function ListUser(\Api\Helloworld\V1\ListUserRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/UserService/ListUser',
+        return $this->_simpleRequest('/api.helloworld.v1.UserService/ListUser',
         $argument,
-        ['\ListUserReply', 'decode'],
+        ['\Api\Helloworld\V1\ListUserReply', 'decode'],
         $metadata, $options);
     }
 
