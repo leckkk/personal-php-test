@@ -31,7 +31,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('timing_task:screenshots')->everyTenMinutes();
 
-        $schedule->command('test:screenshots')->everyMinute();
+        $schedule->command('test:screenshots')->everyTenMinutes();
     }
 
     /**
