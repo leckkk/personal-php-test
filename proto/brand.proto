@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package api.brand.v1;
+
+option go_package = "brands/api/brand/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.brand.v1";
+
+service Brand {
+    rpc CreateBrand (CreateBrandRequest) returns (CreateBrandReply);
+    rpc UpdateBrand (UpdateBrandRequest) returns (UpdateBrandReply);
+    rpc DeleteBrand (DeleteBrandRequest) returns (DeleteBrandReply);
+    rpc GetBrand (GetBrandRequest) returns (GetBrandReply);
+    rpc ListBrand (ListBrandRequest) returns (ListBrandReply);
+}
+
+message BrandObj {
+    int64 id = 1;
+    string name = 2;
+}
+
+message CreateBrandRequest {
+    string name = 1;
+}
+message CreateBrandReply {}
+
+message UpdateBrandRequest {
+    int64 id = 1;
+    string name = 2;
+}
+message UpdateBrandReply {}
+
+message DeleteBrandRequest {
+    int64 id = 1;
+}
+message DeleteBrandReply {}
+
+message GetBrandRequest {
+    int64 id = 1;
+}
+message GetBrandReply {
+    BrandObj brand = 1;
+}
+
+message ListBrandRequest {}
+message ListBrandReply {
+    repeated BrandObj brands = 1;
+}

@@ -2,7 +2,8 @@
 
 namespace App\Console\Commands;
 
-use app\Grpc\UserServiceClient;
+use Api\Brand\V1\BrandClient;
+use Api\Brand\V1\ListBrandRequest;
 use Illuminate\Console\Command;
 
 class TestGrpc extends Command
@@ -46,20 +47,27 @@ class TestGrpc extends Command
         // 服务端ip地址:端口
         $hostname = '0.0.0.0:9001';
 
-        $client = new UserServiceClient($hostname, [
+        $client = new BrandClient($hostname, [
             'credentials' => \Grpc\ChannelCredentials::createInsecure(),
         ]);
 
-        $request = new \GetUserRequest();
-        $request->setId(2);
-        list($response, $status) = $client->GetUser($request)->wait();
+        $request = new ListBrandRequest();
+        list($response, $status) = $client->ListBrand($request)->wait();
 
         if ($status->code !== \Grpc\STATUS_OK) {
             echo "ERROR: " . $status->code . ", " . $status->details . PHP_EOL;
             exit(1);
         }
 
-        dump($response->getUser()->getName());
+        $brands = [];
+        foreach ($response->getBrands() as $brand) {
+            $brands[] = [
+                'id' => $brand->getId(),
+                'name' => $brand->getName(),
+            ];
+        }
+
+        dump($brands);
 
 //        echo $response->getMessage() . PHP_EOL;
     }
