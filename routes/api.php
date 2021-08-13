@@ -14,4 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/callback', 'PassportController@callback');
+Route::group([
+    'middleware' => 'auth:api'
+], function () {
+    Route::get('one', 'PermissionController@first');
+});
